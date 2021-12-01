@@ -1,0 +1,80 @@
+<div class="container">
+  <div class="row text-center success m">
+    <h1 class="text-success">LVR CALCULATOR</h1>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h3>Fill In the details</h3>
+      <form
+        name="calculationForm"
+        #calculationForm="ngForm"
+        (ngSubmit)="calculate()"
+        autocomplete="off"
+      >
+        <label for="">
+          What is the value of the property?
+          <span class="glyphicon glyphicon-name"></span>
+        </label>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">$</span>
+          <input
+            class="form-control"
+            name="propertyValue"
+            required
+            type="number"
+            min="1"
+            [(ngModel)]="propertyValue"
+          />
+        </div>
+        <label for=""> How much are you planning to borrow? </label>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">$</span>
+          <input
+            name="borrowAmount"
+            type="number"
+            #borrowAmount
+            [(ngModel)]="amount"
+            class="form-control"
+            required
+            min="1"
+          />
+        </div>
+        {{ calculationForm.errors }}
+        <button
+          type="submit"
+          [disabled]="calculationForm.invalid"
+          class="btn m-xl-4 rounded-pill btn-success btn-round pill"
+        >
+          Calculate
+        </button>
+      </form>
+    </div>
+    <div class="col-md-6 mt-5">
+      <div class="card bg-light" style="width: 18rem">
+        <div class="card-body">
+          <h5 class="card-title">Result</h5>
+          <div class="row">
+            <div class="col-md-6">Property Value</div>
+            <div class="col-md-6 text-right">
+              <span *ngIf="propertyValue">$</span>{{ propertyValue }}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">Loan Amount</div>
+            <div class="col-md-6 text-right">
+              <span *ngIf="amount">$</span>{{ amount }}
+            </div>
+          </div>
+          <div class="row text-success">
+            <div class="col-md-6">LVR</div>
+            <div class="col-md-6">
+              <div class="text-right">
+                <span *ngIf="result"> {{ result }}% </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

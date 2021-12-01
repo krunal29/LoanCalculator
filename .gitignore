@@ -1,1 +1,11 @@
 *.zip
+/.vs
+/LoanCalculatorBackend/.vs/LoanCalculator/v16
+/LoanCalculatorBackend/.vs/LoanCalculator
+/LoanCalculatorBackend/Business/LoanCalculator.Business/bin/Debug/net5.0
+/LoanCalculatorBackend/Business/LoanCalculator.Business/obj
+/LoanCalculatorBackend/LoanCalculator.API/.vs/LoanCalculator.API
+/LoanCalculatorBackend/LoanCalculator.API/bin/Debug/net5.0
+/LoanCalculatorBackend/LoanCalculator.API/obj
+/LoanCalculatorBackend/LoanCalculator.APITest/obj
+/LoanCalculatorBackend/LoanCalculator.APITest/bin
